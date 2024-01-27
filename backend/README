@@ -1,0 +1,18 @@
+# App-node-react
+
+This is the one aplication make in node and react.
+
+## Installation
+
+1.- Ejecutar "docker-compose up" en la terminal dentro de la carpeta contenedora.
+<br>Nota: Se puede cambiar la ubicacion donde se guarda los volumenes y esto se encuentra en el archivo de "docker-compose.yml" en la linea 13.
+previo a esto se debe tener instalado DOCKER DESKTOP <li>https://www.docker.com/products/docker-desktop/</li>
+
+```bash
+docker-compose up
+```
+
+Credenciales BD
+<li>POSTGRES_DB=app-node-react</li>
+<li>POSTGRES_USER=root</li>
+<li>POSTGRES_PASSWORD=1234</li>
