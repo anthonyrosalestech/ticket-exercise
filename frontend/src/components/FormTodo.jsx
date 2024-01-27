@@ -4,7 +4,7 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { addTicket } from "../redux/ticketSlice";
 import { Button } from "@mui/material";
-import SendIcon from '@mui/icons-material/Send';
+import SendIcon from "@mui/icons-material/Send";
 
 const FormTodo = () => {
   const dispatch = useDispatch();
@@ -17,7 +17,9 @@ const FormTodo = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     axios.post(`http://localhost:4000/tickets/create`, data).then((res) => {
-      dispatch(addTicket(res.data));
+      console.log(res);
+      if (!res.data.name) dispatch(addTicket(res.data));
+      else alert(`${res.data.name}: ${res.data.detail}`);
     });
   };
 

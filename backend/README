@@ -8,6 +8,17 @@ This is the one aplication make in node and react.
 <br>Nota: Se puede cambiar la ubicacion donde se guarda los volumenes y esto se encuentra en el archivo de "docker-compose.yml" en la linea 13.
 previo a esto se debe tener instalado DOCKER DESKTOP <li>https://www.docker.com/products/docker-desktop/</li>
 
+2.- Revisar la configuracion de donde se van a istalar los volumnes para la base de datos por default va descomentada la linea para windows si usa mac cambiar en el archivo docker-compose.yml.
+```bash
+    volumes:
+      # Mac
+      #- ~/Documents:/var/lib/postgres/data
+      # Windows
+      - C:\:/var/lib/postgres/data 
+      - ./sql/create_schema.sql:/docker-entrypoint-initdb.d/create_schema.sql
+      - ./sql/data.sql:/docker-entrypoint-initdb.d/data.sql
+```
+
 ```bash
 docker-compose up
 ```
@@ -16,3 +27,7 @@ Credenciales BD
 <li>POSTGRES_DB=app-node-react</li>
 <li>POSTGRES_USER=root</li>
 <li>POSTGRES_PASSWORD=1234</li>
+
+3.- Despues de estas configuraciones ejecutar deberian renombrar el archivo ".env.example" a solo ".env".
+
+4.- Ejecutar "npm i" y despues comprobar que todo este bien y ejecutar "npm start"

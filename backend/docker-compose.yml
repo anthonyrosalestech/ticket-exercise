@@ -10,7 +10,10 @@ services:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=1234
     volumes:
-      - C:\:/var/lib/postgres/data
+      # Mac
+      #- ~/Documents:/var/lib/postgres/data
+      # Windows
+      - C:\:/var/lib/postgres/data 
       - ./sql/create_schema.sql:/docker-entrypoint-initdb.d/create_schema.sql
       - ./sql/data.sql:/docker-entrypoint-initdb.d/data.sql
     ports:
